@@ -59,7 +59,8 @@ class AgentResource extends Resource
                     ->getUploadedFileNameForStorageUsing(function (TemporaryUploadedFile $file): string {
                         return (string) str($file->getClientOriginalName())->prepend('agents-');
                     })
-                    ->directory('agents')->required(),
+                    ->directory('agents')
+                    ->required(),
                 TextInput::make(name: 'twitter')
                     ->url()
                     ->prefix('https://')
