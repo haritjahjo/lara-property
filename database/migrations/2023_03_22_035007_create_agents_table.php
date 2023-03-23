@@ -15,12 +15,12 @@ return new class extends Migration
             $table->id();
             $table->string('full_name');
             $table->string('title');
-            $table->string('description');
-            $table->string('photo');
-            $table->string('twitter');
-            $table->string('facebook');
-            $table->string('linkedin');
-            $table->string('instagram');
+            $table->text('description');
+            $table->string('photo')->nullable();
+            $table->string('twitter')->nullable();
+            $table->string('facebook')->nullable();
+            $table->string('linkedin')->nullable();
+            $table->string('instagram')->nullable();
             $table->timestamps();
         });
     }
