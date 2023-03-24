@@ -45,7 +45,7 @@ class AgentResource extends Resource
                     ->default('Real Estate Agent')
                     ->disablePlaceholderSelection()
                     ->required(),
-                MarkdownEditor::make('content')
+                MarkdownEditor::make('description')
                     ->disableAllToolbarButtons()
                     ->enableToolbarButtons([
                         'bold',
@@ -56,8 +56,9 @@ class AgentResource extends Resource
                         'strike',
                     ])->required(),
                 FileUpload::make('photo')
+                    ->image()
                     ->getUploadedFileNameForStorageUsing(function (TemporaryUploadedFile $file): string {
-                        return (string) str($file->getClientOriginalName())->prepend('agents-');
+                        return (string) str($file->getClientOriginalName())->prepend('agent-');
                     })
                     ->directory('agents')
                     ->required(),
