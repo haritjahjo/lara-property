@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PropertyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,5 +34,7 @@ Route::middleware('auth')->group(function () {
 Route::view('services', 'services')->name('services'); 
 Route::view('about', 'about')->name('about');
 Route::view('contact', 'contact')->name('contact');
+
+Route::get('properties', [PropertyController::class, 'index'])->name('properties');
 
 require __DIR__.'/auth.php';
