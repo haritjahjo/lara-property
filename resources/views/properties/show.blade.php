@@ -1,6 +1,4 @@
-@extends('layouts.guest')
-
-@section('content')
+<x-guest-layout>
     <div
       class="hero page-inner overlay"
       style="background-image: url({{ asset('images/hero_bg_3.jpg') }})"
@@ -88,4 +86,4 @@
         </div>
       </div>
     </div>
-@endsection
+</x-guest-layout>

@@ -1,5 +1,4 @@
-@extends('layouts.guest')
-@section('content')
+<x-guest-layout>
     <div class="hero">
         <div class="hero-slide">
             <div class="img overlay" style="background-image: url('images/hero_bg_3.jpg')"></div>
@@ -312,4 +311,4 @@
             </div>
         </div>
     </div>
-@endsection
+</x-guest-layout>

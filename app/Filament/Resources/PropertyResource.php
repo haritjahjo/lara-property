@@ -8,6 +8,7 @@ use App\Models\Property;
 use Filament\Resources\Form;
 use Filament\Resources\Table;
 use Filament\Resources\Resource;
+use Filament\Tables\Filters\Filter;
 use Livewire\TemporaryUploadedFile;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Toggle;
@@ -129,7 +130,10 @@ class PropertyResource extends Resource
                     ->falseIcon('heroicon-o-x-circle'),
             ])
             ->filters([
-                //
+                Filter::make('is_popular')->label('Popular')
+                    ->query(fn (Builder $query): Builder => $query->where('is_popular', true)),
+                Filter::make('is_featured')->label('Featured')
+                    ->query(fn (Builder $query): Builder => $query->where('is_featured', true)),                                
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),

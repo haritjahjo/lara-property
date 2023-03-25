@@ -1,6 +1,4 @@
-@extends('layouts.guest')
-
-@section('content')
+<x-guest-layout>
     <div class="hero page-inner overlay" style="background-image: url('images/hero_bg_3.jpg')">
         <div class="container">
             <div class="row justify-content-center align-items-center">
@@ -356,4 +354,4 @@
             </div>
         </div>
     </div>
-@endsection
+</x-guest-layout>
