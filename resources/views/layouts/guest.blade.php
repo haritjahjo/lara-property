@@ -34,7 +34,7 @@
     <link rel="stylesheet" href="{{ asset('css/tiny-slider.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/aos.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
-
+    @livewireStyles
     <title>
         Property &mdash; Free Bootstrap 5 Website Template by Untree.co
     </title>
@@ -54,12 +54,12 @@
         <div class="container">
             <div class="menu-bg-wrap">
                 <div class="site-navigation">
-                    <a href="index.html" class="logo m-0 float-start">Property</a>
+                    <a href="/" class="logo m-0 float-start">Property</a>
 
                     <ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end">
-                        <li class="active"><a href="index.html">Home</a></li>
+                        <li class="active"><a href="/">Home</a></li>
                         <li class="has-children">
-                            <a href="properties.html">Properties</a>
+                            <a href="{{route('properties')}}">Properties</a>
                             <ul class="dropdown">
                                 <li><a href="#">Buy Property</a></li>
                                 <li><a href="#">Sell Property</a></li>
@@ -207,12 +207,19 @@
         </div>
     </div>
 
-    <script src="js/bootstrap.bundle.min.js"></script>
+    {{-- <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/tiny-slider.js"></script>
     <script src="js/aos.js"></script>
     <script src="js/navbar.js"></script>
     <script src="js/counter.js"></script>
-    <script src="js/custom.js"></script>
+    <script src="js/custom.js"></script> --}}
+    @livewireScripts
+    <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('js/tiny-slider.js') }}"></script>
+    <script src="{{ asset('js/aos.js') }}"></script>
+    <script src="{{ asset('js/navbar.js') }}"></script>
+    <script src="{{ asset('js/counter.js') }}"></script>
+    <script src="{{ asset('js/custom.js') }}"></script>
 </body>
 
 </html>

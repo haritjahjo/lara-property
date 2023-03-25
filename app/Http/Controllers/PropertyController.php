@@ -14,4 +14,9 @@ class PropertyController extends Controller
 
         return view('properties.index', compact('properties'));
     }
+
+    public function show(Property $property): View
+    {
+        return view('properties.show', compact('property'));
+    }
 }
